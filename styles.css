@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@300;400;600&display=swap');
+
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #1a1a1a url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+    transition: background 0.5s, color 0.5s;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+/* Resume Container */
+.resume {
+    width: 800px;
+    background: black;
+    color: white;
+    padding: 60px 40px 40px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Torn Paper Effect */
+.torn-paper {
+    background: linear-gradient(135deg, #b8860b, #ffd700);
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    clip-path: polygon(0% 100%, 10% 95%, 20% 98%, 30% 92%, 40% 95%, 50% 90%, 60% 93%, 70% 88%, 80% 92%, 90% 85%, 100% 90%, 100% 0%, 0% 0%);
+    z-index: 1;
+}
+
+.name-section h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 50px;
+    margin: 0;
+    color: black;
+    text-shadow: 0 0 5px #ffd700, 0 0 10px #ffcc00, 0 0 15px #ffcc00;
+}
+
+.name-section p {
+    font-size: 20px;
+    margin: 0;
+    color: black;
+}
+
+/* Profile Photo */
+.profile-photo {
+    width: 140px;
+    height: 140px;
+    padding: 5px;
+    background: white;
+    border-radius: 50%;
+    background-image: linear-gradient(white, white), linear-gradient(135deg, #b8860b, #ffd700);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Section Headings */
+h2 {
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+}
+
+.gold-line {
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #b8860b, #ffd700);
+    margin: 8px 0 15px;
+}
+
+/* Content Layout */
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.left, .right {
+    width: 48%;
+}
+
+/* Skills Section */
+.skills {
+    margin-top: 20px;
+}
+
+.skill {
+    margin-bottom: 15px;
+}
+
+.skill-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    width: 100%;
+    background: #333;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 8px;
+    background: #009dff;
+    border-radius: 5px;
+}
+
+/* Contact Section */
+.contact {
+    background: linear-gradient(135deg, #b8860b, #ffd700);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 80px;
+    color: black;
+    font-weight: bold;
+}
+
+.contact .black-line {
+    width: 100%;
+    height: 3px;
+    background: black;
+    margin: 4px 0 10px;
+}
+
+/* Light Mode */
+body.light-mode {
+    background: #f5f5f5;
+    color: black;
+    background-image: none;
+}
+
+body.light-mode .resume {
+    background: white;
+    color: black;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .torn-paper {
+    background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+}
+
+body.light-mode .name-section h1,
+body.light-mode .name-section p {
+    color: black;
+    text-shadow: none;
+}
+
+body.light-mode h2 {
+    color: black;
+}
+
+body.light-mode .gold-line {
+    background: linear-gradient(90deg, #444, #666);
+}
+
+body.light-mode .skill-name {
+    color: black;
+}
+
+body.light-mode .skill-bar {
+    background: #ddd;
+}
+
+body.light-mode .skill-fill {
+    background: #007bff;
+}
+
+body.light-mode .contact {
+    background: linear-gradient(135deg, #ddd, #eee);
+    color: black;
+}
+
+body.light-mode .contact .black-line {
+    background: black;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: absolute;
+    top: 200px;
+    right: 35%;
+    padding: 10px 20px;
+    background: #ffd700;
+    border: none;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.theme-toggle:hover {
+    background: #b8860b;
+}
+
+body.light-mode .theme-toggle {
+    background: #333;
+    color: white;
+}
+
+body.light-mode .theme-toggle:hover {
+    background: #555;
+}
+
+/* Icons Container */
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.icon-container i {
+    font-size: 30px;
+    color: #ffd700;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-container i:hover {
+    color: #b8860b;
+    transform: scale(1.2);
+}
+
+body.light-mode .icon-container {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .icon-container i {
+    color: #333;
+}
+
+body.light-mode .icon-container i:hover {
+    color: #555;
+}
